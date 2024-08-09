@@ -2498,7 +2498,58 @@ onymous" defer="defer" type="application/javascript" src="https://github.githuba
 		});
 	</script>
 <iframe width="180" height="180" style="border:none" src="https://dimden.dev/moon?custom=1" name="dimdenmoonwidget"></iframe>
-            
+
+    <style>
+        .trail {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            color: #61dafb;
+            font-size: 16px;
+            pointer-events: none;
+            user-select: none;
+            transition: transform 0.1s ease, opacity 0.1s ease;
+        }
+
+        .trail.hidden {
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    
+<script>
+        const trailContainer = document.createElement('div');
+        document.body.appendChild(trailContainer);
+
+        const createTrail = () => {
+            const trail = document.createElement('div');
+            trail.className = 'trail';
+            trail.textContent = 'A';
+            trailContainer.appendChild(trail);
+            return trail;
+        };
+
+        const trails = [];
+        for (let i = 0; i < 10; i++) {
+            trails.push(createTrail());
+        }
+
+        document.addEventListener('mousemove', (event) => {
+            trails.forEach((trail, index) => {
+                setTimeout(() => {
+                    trail.style.left = `${event.clientX}px`;
+                    trail.style.top = `${event.clientY}px`;
+                    trail.classList.remove('hidden');
+                }, index * 50);
+
+                setTimeout(() => {
+                    trail.classList.add('hidden');
+                }, (index + 1) * 50);
+            });
+        });
+    </script>
+
 <div id="snow">
 <div>
 <p> (?� rhjeiuycjhuicrhjkklujuijyhiujk</p>
