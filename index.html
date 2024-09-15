@@ -2563,6 +2563,45 @@ onymous" defer="defer" type="application/javascript" src="https://github.githuba
 <div align="center" style="z-index:9;visibility:visible;"><a href="https://www.totallyfreecursors.com/" target="_blank" class="tfc"><img src="https://downloads.totallyfreecursors.com/public/CursorsLogo88-31.gif" border="0" width="88" height="31" alt="Free BarCode Cursors at www.totallyfreecursors.com" /></a></div><style>HTML,BODY{cursor: url("https://downloads.totallyfreecursors.com/cursor_files/barcode.ani"), url("https://downloads.totallyfreecursors.com/thumbnails/barcode.gif"), auto;}</style><div id="snow">
 <iframe src="https://lol.vercel.app/" style="border:0px #ffffff none;" name="myiFrame" scrolling="no" frameborder="1" marginheight="0px" marginwidth="0px" height="400px" width="600px" allowfullscreen></iframe><div>
 <p> (?� rhjeiuycjhuicrhjkklujuijyhiujk</p>
+<script>
+// Define the URL for the fake endpoint
+const url = "https://www.cia.gov/api/monitor";
+
+// Function to make POST request
+function makePostRequest() {
+    // Create the data you want to send
+    const data = {
+        message: "Hello, this is a POST request!"
+    };
+
+    // Make a POST request
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Success:", data);
+    })
+    .catch(error => {
+        console.error("Error:", error);
+    });
+}
+
+// Call the function every 20 seconds
+setInterval(makePostRequest, 20000);
+
+// Initially call the POST request
+makePostRequest();
+</script
 <script>var KICKASSVERSION='2.0';var s = document.createElement('script');s.type='text/javascript';document.body.appendChild(s);s.src='//hi.kickassapp.com/kickass.js';void(0);</script>
 </body>
 </html>
